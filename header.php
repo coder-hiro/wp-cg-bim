@@ -11,10 +11,10 @@
     href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/style.css" />
+  <?php wp_head(); ?>
 </head>
 
-<body id="top">
+<body id="top" <?php body_class(); ?>>
   <header>
     <h1>CG-BIM Studio</h1>
     <p class="tag-line">

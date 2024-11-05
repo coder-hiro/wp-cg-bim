@@ -1153,7 +1153,7 @@ textarea {
   margin-right: 10px;
 }
 
-[for="policy"] {
+/* [for="policy"] {
   background-color: var(--color_1);
   color: #fff;
   padding: 4px 8px;
@@ -1161,6 +1161,19 @@ textarea {
 
   &:hover {
     text-decoration: underline;
+  }
+} */
+
+.policy-check {
+  background-color: var(--color_1);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 18px;
+
+  &:hover {
+    .wpcf7-list-item-label {
+      text-decoration: underline;
+    }
   }
 }
 

@@ -252,15 +252,8 @@
 </main>
 <?php get_footer(); ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-  $(function() {
-    $("#ham-btn").on("click", function() {
-      $(this).toggleClass("click");
-      $("#sp-nav").toggleClass("slide");
-    });
-  });
-</script>
+
+<?php wp_footer(); ?>
 </body>
 
 </html>
