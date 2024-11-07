@@ -66,7 +66,7 @@
           <div class="news-box">
             <a href="<?php the_permalink(); ?>">
 
-              <div class="thumb-box"><?php the_post_thumbnail_url(); ?></div>
+              <div class="thumb-box"><?php the_post_thumbnail(); ?></div>
               <!-- <img src="<?php the_post_thumbnail_url(); ?>" alt="" /> -->
 
               <div class="cate">
@@ -148,36 +148,60 @@
   <section id="pick-up" class="page-section">
     <h3>おすすめ作品</h3>
     <div class="pick-up-wrapper">
-      <div class="pick-up-box" data-rank="1">
-        <div class="eye-catch">
-          <img src="https://placehold.jp/800x1000.png" alt="" />
-        </div>
-        <h4>作品のタイトル1</h4>
-        <div class="pick-up-cate">
-          <div class="pick-up-cate-name">外観CGパース</div>
-          <p class="post-date">2024.10.15</p>
-        </div>
-      </div>
-      <div class="pick-up-box" data-rank="2">
-        <div class="eye-catch">
-          <img src="https://placehold.jp/800x600.png" alt="" />
-        </div>
-        <h4>作品のタイトル2</h4>
-        <div class="pick-up-cate">
-          <div class="pick-up-cate-name">内観CGパース</div>
-          <p class="post-date">2024.10.14</p>
-        </div>
-      </div>
-      <div class="pick-up-box" data-rank="3">
-        <div class="eye-catch">
-          <img src="https://placehold.jp/800x600.png" alt="" />
-        </div>
-        <h4>作品のタイトル3</h4>
-        <div class="pick-up-cate">
-          <div class="pick-up-cate-name">BIM</div>
-          <p class="post-date">2024.10.13</p>
-        </div>
-      </div>
+
+
+      <?php
+      $arg = array(
+        'posts_per_page' => 1, // 表示する件数
+        'orderby' => 'date', // 日付でソート
+        'order' => 'DESC', // DESCで最新から表示、ASCで最古から表示
+        'category_name' => 'pick-up', // 表示したいカテゴリーのスラッグを指定
+        //'tag' => 'post'//表示したいタグをスラッグ指定
+      );
+      $posts = get_posts($arg);
+      if ($posts): ?>
+
+
+        <?php
+        foreach ($posts as $post) :
+          setup_postdata($post);
+        ?>
+          <!-- ループ開始 -->
+          <div class="pick-up-box" data-rank="1">
+            <div class="eye-catch">
+              <img src="<?php the_post_thumbnail_url(); ?>" alt="" />
+            </div>
+            <h4><?php the_title(); ?></h4>
+            <div class="pick-up-cate">
+              <div class="pick-up-cate-name">
+
+                <!-- 投稿データのタグを取得 -->
+                <?php
+                $posttags1 = get_the_tags();
+                if ($posttags1) {
+                  foreach ($posttags1 as $tag1) {
+                    echo $tag1->name;
+                    echo ' ';
+                  }
+                } ?>
+
+              </div>
+              <time class="post-date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+            </div>
+          </div>
+
+        <?php endforeach; ?>
+        <!-- ループ終了 -->
+
+      <?php
+      /// 必ずクエリをリセット
+      endif;
+      wp_reset_postdata();
+      ?>
+
+
+
+
     </div>
 
     <a href="#" class="btn to-works">他の作品を見る</a>
@@ -198,7 +222,7 @@
     </div>
   </section>
 
-  <section id="voice" class="page-section">
+  <section id=" " class="page-section">
     <h3>お客様の声</h3>
     <div class="voice-wrapper">
 

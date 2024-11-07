@@ -3,5 +3,9 @@
 </div>
 
 <footer>
-  <p><small>&copy 2011-2024 CG-BIM Studio</small></p>
+  <p>
+    <small>&copy 2011- <time datetime="<?php the_time('c'); ?>"><?php the_time('Y'); ?></time> CG-BIM Studio</small>
+  </p>
+
+
 </footer>

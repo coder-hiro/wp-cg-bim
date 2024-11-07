@@ -30,24 +30,24 @@
           <div class="menu-inner">
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url()); ?>/#service">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/service.webp" alt="" />
                 <span>サービス</span></a>
             </div>
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url()); ?>/#pick-up">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/osusume.webp" alt="" />
                 <span>おすすめ</span>
               </a>
             </div>
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url()); ?>/#about">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/about.webp" alt="" />
                 <span>私たちについて</span>
               </a>
             </div>
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url()); ?>/#voice">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/okyakusama.webp" alt="" />
                 <span>お客様の声</span>
               </a>
             </div>
@@ -61,13 +61,13 @@
           <div class="menu-inner">
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url('?page_id=11')); ?>/#about">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/kaisyanai.webp" alt="" />
                 <span>会社案内</span>
               </a>
             </div>
             <div class="menu-box">
               <a href="<?php echo esc_url(home_url('?page_id=11')); ?>/#recruit">
-                <img src="https://placehold.jp/300x200.png" alt="" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/saiyou.webp" alt="" />
                 <span>採用情報</span>
               </a>
             </div>
