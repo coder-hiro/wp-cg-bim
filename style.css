@@ -329,10 +329,31 @@ body {
 }
 
 header {
-  display: none;
+  font-family: var(--font_ja);
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 270px;
+  margin: auto;
+  /* background-color: #ffffff78; */
+  /* backdrop-filter: blur(5px); */
+  /* box-shadow: 0 0 10px #30303080; */
+  color: white;
+  text-shadow: 0px 0px 5px #000000;
+  font-weight: bold;
+
+  h1 {
+    font-size: clamp(2.188rem, 1.506rem + 3.41vw, 4.063rem);
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 .tag-line {
+  font-size: clamp(1.125rem, 0.898rem + 1.14vw, 1.75rem);
+  text-align: center;
+  line-height: 2;
 }
 
 /* pc-nav--------------------- */
@@ -393,7 +414,7 @@ li:nth-of-type(-n + 5) > a {
     content: "";
     display: block;
     width: 1px;
-    height: 30%;
+    height: 60%;
     background-color: #fff;
     position: absolute;
     right: 0;
@@ -540,6 +561,7 @@ li:nth-of-type(-n + 5) > a {
 .main-visual {
   width: 100%;
   height: calc(100vh - 32px);
+
   img {
     width: 100%;
     height: 100vh;
@@ -597,6 +619,11 @@ li:nth-of-type(-n + 5) > a {
 .page-section {
   min-height: 100vh;
   padding: 120px 10px;
+
+  @media (767px >= width) {
+    min-height: 50vh;
+    padding: 60px 10px;
+  }
 
   h3 {
     font-family: var(--font_ja);
@@ -813,6 +840,16 @@ li:nth-of-type(-n + 5) > a {
   grid-template-columns: 60% 40%;
   grid-template-rows: repeat(2, 1fr);
   gap: 54px;
+
+  @media (1260px >= width) {
+    width: 80%;
+    aspect-ratio: 1 / 0.8;
+    gap: 4%;
+  }
+
+  @media (767px >= width) {
+    display: block;
+  }
 }
 
 .pick-up-box {
@@ -820,9 +857,21 @@ li:nth-of-type(-n + 5) > a {
   padding: 20px;
   box-shadow: 0 0 15px #888888;
 
+  @media (1000px >= width) {
+    padding: 10px;
+  }
+
+  @media (767px >= width) {
+    margin-bottom: 50px;
+  }
+
   h4 {
     font-size: 22px;
     margin: 10px 0;
+
+    @media (1000px >= width) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -867,6 +916,9 @@ li:nth-of-type(-n + 5) > a {
 }
 
 .pick-up-cate-name {
+  @media (1000px >= width) {
+    font-size: 14px;
+  }
 }
 
 .post-date {
@@ -1111,9 +1163,15 @@ footer {
     text-align: center;
     padding: 14px 30px;
     border: 2px solid var(--text_color);
-    margin: 0 10px;
+    margin: 20px 10px;
     cursor: pointer;
     transition: 0.2s;
+
+    @media (900px >= width) {
+      margin: 10px;
+      padding: 10px;
+    }
+
     &:hover {
       background-color: #e4e4e4;
     }
@@ -1148,6 +1206,10 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 60px;
+
+  @media (900px >= width) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .works-box {
@@ -1221,6 +1283,10 @@ footer {
   width: 80%;
   /* 縁の色 */
   border-color: var(--g_color);
+
+  @media (767px >= width) {
+    width: 100%;
+  }
 }
 
 textarea {
@@ -1230,6 +1296,10 @@ textarea {
   background-color: #ffffff;
   width: 80%;
   height: 150px;
+
+  @media (767px >= width) {
+    width: 100%;
+  }
 }
 
 .p-country-name {
@@ -1239,15 +1309,29 @@ textarea {
   display: flex;
   flex-wrap: wrap;
 
+  @media (767px >= width) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
   dt,
   dd {
     margin-bottom: 30px;
   }
+
   dt {
     width: 25%;
     text-align: right;
     padding-right: 20px;
     font-weight: bold;
+
+    @media (767px >= width) {
+      width: 100%;
+      text-align: left;
+      padding-right: 0;
+      margin-bottom: 5px;
+    }
 
     &:nth-of-type(-n + 5) {
       &::after {
@@ -1260,6 +1344,10 @@ textarea {
   }
   dd {
     width: 75%;
+
+    @media (767px >= width) {
+      width: 100%;
+    }
   }
 }
 
@@ -1280,12 +1368,22 @@ textarea {
     text-align: center;
     font-size: 22px;
     margin-bottom: 30px;
+
+    @media (767px >= width) {
+      font-size: 18px;
+    }
   }
 
   p {
     font-size: 18px;
     line-height: 2;
     margin-bottom: 100px;
+
+    @media (767px >= width) {
+      font-size: 14px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
   }
 }
 
@@ -1309,7 +1407,14 @@ textarea {
   background-color: var(--color_1);
   color: #fff;
   padding: 4px 8px;
-  font-size: 18px;
+  font-size: 10px;
+
+  @media (767px >= width) {
+    font-size: 14px;
+    color: #000;
+    background-color: transparent;
+    padding: 0;
+  }
 
   &:hover {
     .wpcf7-list-item-label {
@@ -1345,6 +1450,10 @@ textarea {
   display: flex;
   flex-wrap: wrap;
 
+  @media (767px >= width) {
+    display: block;
+  }
+
   dt,
   dd {
     padding: 30px;
@@ -1354,11 +1463,22 @@ textarea {
     width: 30%;
     background-color: #e8e8e8;
     font-weight: bold;
+
+    @media (767px >= width) {
+      width: 100%;
+      margin-bottom: 0;
+      padding-block: 10px;
+    }
   }
 
   dd {
     width: 70%;
     background-color: #d9dee1;
+
+    @media (767px >= width) {
+      width: 100%;
+      padding-block: 20px;
+    }
   }
 }
 

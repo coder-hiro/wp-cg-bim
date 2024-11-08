@@ -5,14 +5,20 @@
 <?php get_header(); ?>
 
 <div class="page-visual">
-  <img src="../img/about.webp" alt="" />
+  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/about.webp" alt="" />
 </div>
 
 <main>
-  <section id="about" class="page-section">
+  <section id="info" class="page-section">
     <h3 class="text-gradation">会社紹介</h3>
 
-    <dl class="about-list">
+    <?php
+    $page_id = get_page_by_path('about-list');  //〇〇スラッグ名が入ります
+    $page = get_post($page_id);
+    echo $page->post_content;  //本文を取得
+    ?>
+
+    <!-- <dl class="about-list">
       <dt>会社名</dt>
       <dd>CG-BIM</dd>
       <dt>所在地</dt>
@@ -38,12 +44,18 @@
       </dd>
       <dt>連結従業員数</dt>
       <dd>140名(2024年4月現在)</dd>
-    </dl>
+    </dl> -->
   </section>
   <section id="recruit" class="page-section">
     <h3 class="text-gradation">採用情報</h3>
 
-    <dl class="about-list">
+    <?php
+    $page_id = get_page_by_path('recruit');  //〇〇スラッグ名が入ります
+    $page = get_post($page_id);
+    echo $page->post_content;  //本文を取得
+    ?>
+
+    <!-- <dl class="about-list">
       <dt>募集職種</dt>
       <dd>総合職<br />CGエンジニア</dd>
       <dt>月給</dt>
@@ -60,7 +72,7 @@
       <dd>年間120日(完全週休2日制)</dd>
       <dt>年次有給休暇</dt>
       <dd>特別休暇、年末年始休暇、慶弔休暇など(初年度10日)</dd>
-    </dl>
+    </dl> -->
   </section>
 </main>
 

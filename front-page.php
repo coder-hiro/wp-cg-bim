@@ -4,7 +4,15 @@
 
 <?php get_header(); ?>
 
+<header>
+  <h1>CG-BIM Studio</h1>
+  <p class="tag-line">
+    ビジョンを形にする<br />建築CGバースで新たな未来を描こう
+  </p>
+</header>
+
 <div class="main-visual">
+
   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/main.webp" alt="" />
 </div>
 
@@ -152,9 +160,9 @@
 
       <?php
       $arg = array(
-        'posts_per_page' => 1, // 表示する件数
+        'posts_per_page' => 3, // 表示する件数
         'orderby' => 'date', // 日付でソート
-        'order' => 'DESC', // DESCで最新から表示、ASCで最古から表示
+        'order' => 'ASC', // DESCで最新から表示、ASCで最古から表示
         'category_name' => 'pick-up', // 表示したいカテゴリーのスラッグを指定
         //'tag' => 'post'//表示したいタグをスラッグ指定
       );
@@ -167,7 +175,7 @@
           setup_postdata($post);
         ?>
           <!-- ループ開始 -->
-          <div class="pick-up-box" data-rank="1">
+          <div class="pick-up-box" data-rank="<?php echo get_post_meta($post->ID, 'rank', true) ?>">
             <div class="eye-catch">
               <img src="<?php the_post_thumbnail_url(); ?>" alt="" />
             </div>
