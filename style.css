@@ -1490,3 +1490,8 @@ textarea {
     height: 100%;
   }
 }
+
+/* GitHubの練習 */
+body{
+  background-color: fuchsia;
+}
